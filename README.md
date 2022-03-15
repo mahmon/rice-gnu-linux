@@ -1,10 +1,9 @@
 # Rice GNU/Linux
-The aim of this repo is to record a process for the complete beginner to get started with GNU/Linux. This is refined record of my own process of migrating from MacOS to GNU/Linux, it is a live document that is updated as I discover things along the way.
+The aim of this repo is to record a process for the complete beginner to follow to get started with GNU/Linux. This is an edited record of my move from MacOS to GNU/Linux. It is a live document that is updated as I refine the process and my learning.
 
-The process is documented in [the wiki for this repo](https://github.com/mahmon/rice-gnu-linux/wiki/00-Introduction "Rice GNU/Linux wiki")
+**NOTE: The process to follow is documented in [the repo wiki](https://github.com/mahmon/rice-gnu-linux/wiki/00-Introduction "Rice GNU/Linux wiki")**
 
-As well as the documentation, this is also a repository of the various configuration files and resources used in this process, especially those I use as part of ricing arch.
-Here's our logo (hover to see the title text):
+The repository contains configuration files and resources used in the process, especially those I use as part of ricing arch.
 
 ![archlinux](./archlinux-logo-light.png "Archlinux")
 
