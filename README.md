@@ -3,7 +3,7 @@ The aim of this repo is to record a process for the complete beginner to follow 
 
 **NOTE: The process to follow is documented in [the repo wiki](https://github.com/mahmon/rice-gnu-linux/wiki/00-Introduction "Rice GNU/Linux wiki")**
 
-The repository contains configuration files and resources used in the process, especially those I use as part of ricing arch.
+The repository contains config files and resources used in the process, especially those I use ricing arch.
 
 ![archlinux](./archlinux-logo-light.png "Archlinux")
 
