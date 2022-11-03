@@ -1,0 +1,69 @@
+#!/usr/bin/env bash
+#
+# Use rofi to create and manage a shutdown menu
+# Note: this relies on associative array support in the shell.
+
+# Options
+ROFI_TEXT="${ROFI_TEXT:-}"
+ROFI_OPTIONS=(${ROFI_OPTIONS:--theme-str '
+    window {
+		border-radius: 8; 
+		width: 120; 
+		height: 220; 
+		font: "San Francisco Display 12"; 
+		padding: 5; 
+		y-offset: 35; 
+		x-offset: -10;
+		} 
+	listview {
+		} 
+	element {
+		padding: 5;
+		} 
+	element-text {
+		padding: 5 5 1 5;
+		} 
+	inputbar {
+		padding: 5 0 0 6;
+		} 
+	textbox-prompt-colon {
+		font: "San Francisco Display Bold 12";
+	} 
+	entry {
+		font: "San Francisco Display Bold 12";
+		padding: 1 0 0 0;
+	}  
+' -location 3})
+
+# menu defined as an associative array
+typeset -A menu
+
+# Menu with keys/commands
+menu=(
+  [Shutdown]="systemctl poweroff"
+  [Reboot]="systemctl reboot"
+  [Logout]="i3-msg exit"
+  [Lock]="--no-startup-id ~/.config/i3lock/i3lock_script"
+  [Cancel]=""
+)
+menu_nrows=${#menu[@]}
+
+launcher_exe=""
+launcher_options=""
+rofi_colors=""
+
+function prepare_launcher() {
+	launcher_exe="rofi"
+    launcher_options=(-dmenu -i -lines "${menu_nrows}" -p "${ROFI_TEXT}" \
+        "${rofi_colors[@]}" "${ROFI_OPTIONS[@]}")
+}
+
+prepare_launcher
+
+launcher=(${launcher_exe} "${launcher_options[@]}")
+selection="$(printf '%s\n' "${!menu[@]}" | sort | "${launcher[@]}")"
+
+if [[ $? -eq 0 && ! -z ${selection} ]]; then
+    i3-msg -q "exec ${menu[${selection}]}"
+fi
+
