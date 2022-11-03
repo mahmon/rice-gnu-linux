@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+# Copyright (C) 2014 Alexander Keller <github@nycroth.com>
+
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not see <http://www.gnu.org/licenses/>
+#
+# Adapted by Wayne Murphy-Jerrett
+
+# Set the interface to the code for wifi card, for example wlan0
+if [[ -z "$INTERFACE" ]] ; then
+    INTERFACE="${BLOCK_INSTANCE:-wlo1}"
+fi
+
+# Set icon
+ICON=$(echo -e '\uF1EB')
+
+# Don't display if if the machine has no wireless
+[[ ! -d /sys/class/net/${INTERFACE}/wireless ]] && exit
+
+# If the wifi interface exists but no connection is active.
+if [[ "$(cat /sys/class/net/$INTERFACE/operstate)" = 'down' ]]; then
+    echo " <span color='$icocol'>$ICON</span> Down  "
+    exit 33
+fi
+
+# Get value for the quality of signal
+QUALITY=$(iw dev ${INTERFACE} link | grep 'dBm$' | grep -Eoe '-[0-9]{2}' | awk '{print  ($1 > -50 ? 100 :($1 < -100 ? 0 : ($1+100)*2))}')
+
+# Output text
+echo " <span color='$icocol'>$ICON</span>  $QUALITY%  "
+

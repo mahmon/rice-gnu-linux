@@ -1,0 +1,27 @@
+#!/bin/bash
+#
+# Basic bash script:
+# To display name of active window
+#
+# Requires xdotool
+# Requires package ttf-font-awesome
+# Availabe in the AUR
+
+ICON=$(echo -e '\uF2D0')
+
+focused_window_id=$(xdotool getwindowfocus)
+active_window_id=$(xdotool getactivewindow)
+class_name=$(xdotool getwindowclassname "$active_window_id")
+
+WINDOW="${class_name^}"
+FULLTEXT=" <span color='$icocol'>$ICON</span>  $WINDOW  "
+SHORTEXT=""
+
+if [ $class_name ]
+then
+	echo "$FULLTEXT"
+	echo "$SHORTEXT"
+fi
+
+exit 0
+

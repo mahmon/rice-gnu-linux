@@ -1,0 +1,36 @@
+#!/bin/bash
+#
+# Basic bash script:
+# Used to check for system updates in pacman
+# 
+# Required pacman-contrib
+# 
+# Requires package ttf-font-awesome
+# Available in the AUR
+
+ICON=$(echo -e '\uF013')
+updates=$(checkupdates | wc -l)
+NUM="${updates}"
+UP="Update"
+UPS="Updates"
+
+FULLTEXT="<span color='$icocol'> $ICON</span> $NUM "
+SHORTEXT="<span color='$icocol'> $ICON</span> $NUM"
+
+if [ $NUM -eq 1 ]
+then
+	FULLTEXT+="$UP  "
+else
+	FULLTEXT+="$UPS  "
+fi
+
+if [ $NUM -lt 1  ]
+then
+	exit 0
+fi
+
+echo "$FULLTEXT"
+echo "$SHORTEXT"
+
+exit 0
+

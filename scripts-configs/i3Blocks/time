@@ -1,0 +1,21 @@
+#!/bin/bash
+#
+# Basic bash script:
+# Can be used later to add functionality to time block
+#
+# Requires package ttf-font-awesome
+# Availabe in the AUR
+
+
+ICON=$(echo -e '\uF017')
+DAY_TIME=$(date +"%a %H:%M")
+TIME=$(date +"%H:%M")
+
+FULLTEXT=" <span color='$icocol'>$ICON</span> $DAY_TIME  "
+SHORTEXT=" <span color='$icocol'>$ICON</span> $TIME  "
+
+echo "$FULLTEXT"
+echo "$SHORTEXT"
+
+exit 0
+

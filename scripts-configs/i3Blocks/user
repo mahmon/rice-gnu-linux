@@ -1,0 +1,16 @@
+#!/bin/bash
+#
+# Basic bash script:
+# Can be used later to add functionality to user block.
+# 
+# Requires package ttf-font-awesome
+# Available in the AUR
+
+
+ICON=$(echo -e '\uF007')
+NAME=$(lslogins | grep $USER | awk '{print $5,$NF}')
+
+echo "<span color='$icocol'> $ICON</span> $NAME  "
+
+exit 0
+
