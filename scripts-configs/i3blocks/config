@@ -1,0 +1,38 @@
+# i3blocks configuration file
+# The i3blocks man page describes the usage of the binary,
+# and its website describes the configuration:
+# https://vivien.github.io/i3blocks
+
+# Global properties
+separator=false
+separator_block_width=0
+icocol=#ffbf00
+markup=pango
+
+# Blocks
+[Active-Window]
+command=scripts/window
+interval=repeat
+
+[Wifi]
+command=scripts/wifi
+interval=10
+
+[Time]
+command=scripts/time
+interval=1
+
+[User]
+command=scripts/user
+interval=once
+
+[Num-Updates]
+command=scripts/updates
+interval=once
+
+[Arch Logo]
+full_text=<span font-family="font-logos">   </span>
+color=#00a2ff
+command=scripts/shutdown_menu
+interval=0
+

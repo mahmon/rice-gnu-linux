@@ -6,7 +6,7 @@
 # Options
 ROFI_TEXT="${ROFI_TEXT:-}"
 ROFI_OPTIONS=(${ROFI_OPTIONS:--theme-str '
-    window {
+	window {
 		border-radius: 8; 
 		width: 120; 
 		height: 220; 
