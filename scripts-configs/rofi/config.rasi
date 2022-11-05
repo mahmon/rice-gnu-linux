@@ -1,0 +1,15 @@
+configuration {
+	modi: "window,run,ssh,drun";
+	max-history-size: 5;
+	drun-display-format: "{name}";
+	display-drun: "" ;
+	timeout {
+		action: "kb-cancel";
+		delay:  0;
+	}
+	filebrowser {
+		directories-first: true;
+		sorting-method:    "name";
+	}
+}
+@theme "rofirice"

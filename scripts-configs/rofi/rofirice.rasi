@@ -1,0 +1,88 @@
+/*************************************************************
+ * ROFI Color theme
+ * User: Rasi
+ * Copyright: Adapted from Soloarized by Wayne Murphy-Jerrett
+ *************************************************************/
+
+* {
+    window-background: 			rgba ( 0, 0, 0, 70 % );
+    selected-background: 		rgb ( 0, 162, 255 );
+    text-normal: 				rgb ( 255, 255, 255 );
+    text-input: 				rgb ( 255, 191, 0 );
+}
+
+window {
+    width: 				100%;
+    font: 				"San Francisco Display 18";
+    height: 			100%;
+    background-color: 	@window-background;
+    border: 			0;
+    padding: 			440 840;
+}
+mainbox {
+    background-color: 	transparent;
+    border: 			0;
+    padding: 			0;
+}
+listview {
+    background-color: 	transparent;
+    fixed-height: 		0;
+    border: 			0;
+    spacing: 			2px;
+    scrollbar: 			false;
+    padding: 			5px;
+}
+element {
+    background-color: 	transparent;
+    border: 			0;
+    padding: 			10;
+}
+element-icon {
+    background-color: 	transparent;
+    size: 				1.6em;
+}
+element-text {
+    background-color: 	transparent;
+    text-color: 		@text-normal;
+    padding: 			10;
+}
+element.normal.normal {
+    background-color: 	transparent;
+}
+element.alternate.normal {
+    background-color: 	transparent;
+}
+element.selected.normal {
+    background-color: 	@selected-background;
+    border-radius: 		8;
+}
+inputbar {
+    background-color: 	transparent;
+	padding:			0 0 0 29px;
+    children: 
+		[ prompt,
+		textbox-prompt-colon,
+		entry,
+		case-indicator ];
+}
+prompt {
+    background-color: 	transparent;
+    text-color: 		@text-normal;
+}
+textbox-prompt-colon {
+    background-color: 	transparent;
+    text-color: 		@text-input;
+    font: 				"San Francisco Display Bold 18";
+    expand: 			false;
+    str: 				":";
+}
+entry {
+	padding:			0 0 0 26px;
+    font: 				"San Francisco Display Bold 18";
+    background-color: 	transparent;
+	text-color: 		@text-input;
+}
+case-indicator {
+    background-color: 	transparent;
+}
+
