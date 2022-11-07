@@ -1,0 +1,44 @@
+#!/bin/sh
+
+BACK='#00000090'
+BACKVER='#ffbf0090'
+BACKWRONG='#00a2ff90'
+TRANS='#00000000'
+DEFAULT='#ffbf00'
+TEXT='#eeeeee'
+WRONG='#00a2ff'
+
+i3lock \
+-i ~/Wallpaper/chardalyn_wallpaper.png -F		\
+--color=$BACK 						\
+\
+--insidever-color=$BACKVER 			\
+--ringver-color=$DEFAULT 			\
+\
+--insidewrong-color=$BACKWRONG 		\
+--ringwrong-color=$WRONG 			\
+\
+--inside-color=$BACK 				\
+--ring-color=$DEFAULT 				\
+--line-color=$TRANS 				\
+--separator-color=$TRANS 			\
+\
+--verif-color=$TEXT 				\
+--wrong-color=$TEXT 				\
+--modif-color=$TEXT 				\
+--time-color=$TEXT 					\
+--date-color=$TEXT 					\
+--layout-color=$TEXT 				\
+--keyhl-color=$WRONG 				\
+--bshl-color=$WRONG 				\
+\
+--screen 1 							\
+--clock 							\
+--indicator 						\
+--ring-width=12.0 					\
+--date-str="%a, %b %d %Y"			\
+\
+--verif-text="verifying"	 		\
+--wrong-text="wrong" 				\
+\
+
