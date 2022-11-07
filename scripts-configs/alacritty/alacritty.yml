@@ -1,0 +1,50 @@
+# Configuration for Alacritty, the GPU enhanced terminal emulator.
+window:
+  padding:
+    x: 25
+    y: 25
+
+font:
+  normal:
+    family: Meslo LG M
+    style: Regular
+
+  bold:
+    family: Meslo LG M
+    style: Bold
+
+  italic:
+    family: Meslo LG M
+    style: Italic
+
+  bold_italic:
+    family: Meslo LG M
+    style: Bold Italic
+
+  size: 10
+
+colors:
+  primary:
+    background: '#111111'
+    foreground: '#ffffff'
+
+  normal:
+    black:   '#000000'
+    red:     '#ff0044'
+    green:   '#77ff00'
+    yellow:  '#ffbf00' 
+    blue:    '#00a2ff'
+    magenta: '#e164fa'
+    cyan:    '#00f7ff'
+    white:   '#ffffff'
+
+  bright:
+    black:   '#000000'
+    red:     '#ff0044'
+    green:   '#77ff00'
+    yellow:  '#ffbf00' 
+    blue:    '#00a2ff'
+    magenta: '#e164fa'
+    cyan:    '#00f7ff'
+    white:   '#ffffff'
+
